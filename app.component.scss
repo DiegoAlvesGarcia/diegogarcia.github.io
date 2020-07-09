@@ -1,0 +1,72 @@
+header {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      font-weight: bold;
+    }
+
+    h2 {
+      font-weight: 100;
+    }
+  }
+
+  .social-media {
+    text-align: center;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.about-me {
+  display: grid;
+  grid-template-columns: 30% 30%;
+  justify-content: space-evenly;
+
+  .img {}
+
+  .content {}
+}
+
+.opportunities {
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .experiences {
+    .companies {
+      justify-content: space-around;
+      display: flex;
+    }
+
+  }
+
+  .academic {
+    .colleges {
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+
+footer {
+  .contacts {
+
+  }
+}
