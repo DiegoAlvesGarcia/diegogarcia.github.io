@@ -1,8 +1,9 @@
 body {
   display: grid;
+  background-color: #fcfbfb;
 }
 
-ul  {
+ul {
   padding: 0;
   list-style: none;
 }
@@ -13,57 +14,103 @@ ul  {
   justify-content: space-evenly;
 }
 
-.person-info {
+.container {
+  margin: 0 3%;
+  font-family: "Poppins", Helvetica, sans-serif;;
+}
+
+.container header img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #F7B64D;
+  border-radius: 0px 0px 0px 150px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+}
+
+.container header {
+  height: calc(100vh - 8px);
+  display: flex;
+  justify-content: space-around;
   flex-direction: column;
-  text-align: center;
 }
 
-.person-info h1 {
-  font-weight: bold;
+.container header .text-hello {
+  width: 60%;
 }
 
-.person-info h2 {
-  font-weight: 100;
+.container header .text-hello p {
+  margin: 0;
 }
 
-.social-media {
-  text-align: center;
+.container header .text-hello .hello {
+  font-size: 3.5em;
+  color: #F7B64D;
 }
 
-.social-media ul {
+.container header .text-hello .welcome {
+  font-size: 1.5em;
+}
+
+.container header .name h1 {
+  font-weight: 400;
+  font-size: 5em;
+  margin: 0;
+  letter-spacing: 5px;
+  line-height: 80px;
+}
+
+.container header .name h2 {
+  font-weight: 200;
+  margin: 20px 0 0 0;
+}
+
+.container header .follow-me {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
-.about-me {
+.container header .follow-me span {
+  font-size: 1.2em;
+}
+
+.container header .follow-me .social-media {
+  margin-left: 15px;
+}
+
+.container .about-me {
   display: grid;
   grid-template-columns: 30% 30%;
   justify-content: space-evenly;
 }
 
-.about-me .img {}
+.container .about-me .img {}
 
-.about-me .content {}
+.container .about-me .content {}
 
-.opportunities h2 {
+.container .opportunities h2 {
   text-align: center;
 }
 
-.opportunities h3 {
+.container .opportunities h3 {
   text-align: center;
 }
 
-.opportunities .experiences .companies {
+.container .opportunities .experiences .companies {
   justify-content: space-around;
   display: flex;
 }
 
 
-.opportunities .academic .colleges {
+.container .opportunities .academic .colleges {
   justify-content: center;
   display: flex;
 }
 
-footer .contacts {}
+.container footer .contacts {}
