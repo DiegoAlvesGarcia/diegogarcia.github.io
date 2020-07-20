@@ -7,6 +7,18 @@ body {
   background-color: #fcfbfb;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -73,6 +85,7 @@ ul {
 }
 
 .container header .name h2 {
+  text-align: initial;
   font-weight: 200;
   margin: 20px 0 0 0;
 }
@@ -97,13 +110,6 @@ ul {
 
 .container .about-me {
   min-height: 100vh;
-}
-
-.container .about-me h2 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: 400;
-  margin: 0 0 20px 0;
 }
 
 .container .about-me .content {
@@ -141,28 +147,62 @@ ul {
   min-height: calc(100vh - 8px);
 }
 
-.container .opportunities h2 {
-  text-align: center;
+.container .opportunities .card-experience {
+  border: 1px solid #f6f6f6;
+  padding: 20px 30px;
+  border-radius: 5px;
+  margin: 0 10px 40px 10px;
+  width: 34%;
+}
+
+.container .opportunities .card-experience svg {
+  fill: #F7B64D;
+  border-radius: 7px 0;
+  padding: 5px;
+  background-color: white;
+}
+
+.container .opportunities .card-experience:hover {
+  background-color: #F7B64D;
+  color: white;
 }
 
 .container .opportunities h3 {
-  text-align: center;
+  text-align: start;
+  margin: 0;
+  color: inherit;
 }
 
-.container .opportunities .experiences .companies {
-  justify-content: space-around;
-  display: flex;
+.container .opportunities h4 {
+  font-weight: 500;
+  text-align: start;
+  margin: 0;
+  color: inherit;
 }
 
+.container .opportunities h3 strong {
+  color: inherit;
+}
 
-.container .opportunities .academic .colleges {
-  justify-content: center;
+.container .opportunities p {
+  margin: 10px 0 0 0;
+  color: inherit;
+  font-weight: 300;
+}
+
+.container .opportunities .cards {
+  justify-content: space-evenly;
   display: flex;
+  flex-flow: row wrap;
 }
 
 .container footer .contacts {}
 
 @media (max-width: 700px) {
+  h2 {
+    font-size: 2em;
+  }
+
   .container .about-me .content {
     flex-direction: column;
   }
@@ -178,5 +218,13 @@ ul {
 
   .container .about-me .content .text {
     width: auto;
+  }
+
+  .container .opportunities .card-experience {
+    width: 70%;
+  }
+
+  .container .opportunities {
+    margin-top: 50px;
   }
 }
