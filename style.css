@@ -1,10 +1,8 @@
-* {
-  color: #3F3D56
-}
-
 body {
   display: grid;
   background-color: #fcfbfb;
+  font-family: "Poppins", Helvetica, sans-serif;
+  margin: 0;
 }
 
 a {
@@ -31,9 +29,8 @@ ul {
 }
 
 .container {
-  margin: 0 3%;
-  font-family: "Poppins", Helvetica, sans-serif;
   margin: 0 10%;
+  color: #3F3D56
 }
 
 .container header img {
@@ -53,7 +50,7 @@ ul {
 }
 
 .container header {
-  min-height: calc(100vh - 8px);
+  min-height: 100vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -133,7 +130,7 @@ ul {
   max-height: 170px;
   width: auto;
   height: auto;
-  border: 2px solid white;
+  border: 2px solid #fcfbfb;
   border-radius: 50%;
 }
 
@@ -144,7 +141,8 @@ ul {
 }
 
 .container .opportunities {
-  min-height: calc(100vh - 8px);
+  min-height: 100vh;
+  margin-top: 35px;
 }
 
 .container .opportunities .card-experience {
@@ -159,17 +157,21 @@ ul {
   fill: #F7B64D;
   border-radius: 7px 0;
   padding: 5px;
-  background-color: white;
+  background-color: #fcfbfb;
 }
 
 .container .opportunities .card-experience:hover {
   background-color: #F7B64D;
-  color: white;
+  color: #fcfbfb;
 }
 
 .container .opportunities h3 {
   text-align: start;
   margin: 0;
+  color: inherit;
+}
+
+.container .opportunities h3 strong {
   color: inherit;
 }
 
@@ -180,14 +182,11 @@ ul {
   color: inherit;
 }
 
-.container .opportunities h3 strong {
-  color: inherit;
-}
-
 .container .opportunities p {
   margin: 10px 0 0 0;
   color: inherit;
   font-weight: 300;
+  font-size: 0.85em;
 }
 
 .container .opportunities .cards {
@@ -196,7 +195,40 @@ ul {
   flex-flow: row wrap;
 }
 
-.container footer .contacts {}
+footer {
+  background-color: #3F3D56;
+  color: #fcfbfb;
+  font-weight: 300;
+}
+
+footer .contacts {
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-left: 10%;
+  font-size: 0.8em;
+}
+
+footer .contacts section {
+  margin-bottom: 10px;
+}
+
+footer .contacts section,
+footer .contacts section a {
+  display: flex;
+  justify-content: initial;
+}
+
+footer .contacts section svg {
+  fill: #F7B64D;
+  margin-right: 10px;
+}
+
+footer .copyright {
+  font-size: 0.7em;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
 @media (max-width: 700px) {
   h2 {
