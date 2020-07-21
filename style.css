@@ -11,6 +11,7 @@ a {
 }
 
 h2 {
+  padding-top: 15px;
   text-align: center;
   font-size: 2.5em;
   font-weight: 400;
@@ -75,16 +76,17 @@ ul {
 
 .container header .name h1 {
   font-weight: 600;
-  font-size: 5em;
+  font-size: 6em;
   margin: 0;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   line-height: 85px;
 }
 
 .container header .name h2 {
   text-align: initial;
   font-weight: 200;
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
+  font-size: 1.7em;
 }
 
 .container header .follow-me {
@@ -106,16 +108,19 @@ ul {
 }
 
 .container .about-me {
-  min-height: 100vh;
+  border-top: 2px solid #F7B64D;
+  border-bottom: 2px solid #F7B64D;
+  border-radius: 15px;
+}
+
+.container .about-me h2 {
+  margin: 0;
 }
 
 .container .about-me .content {
   display: flex;
   justify-content: space-between;
-  ;
   flex-direction: row;
-  border-top: 2px solid #F7B64D;
-  border-bottom: 2px solid #F7B64D;
   border-radius: 15px;
 }
 
@@ -142,7 +147,7 @@ ul {
 
 .container .opportunities {
   min-height: 100vh;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .container .opportunities .card-experience {
@@ -235,6 +240,20 @@ footer .copyright {
     font-size: 2em;
   }
 
+  .container header {
+    padding-bottom: 15px;
+    min-height: calc(100vh - 15px);
+  }
+
+  .container header .name h1 {
+    font-size: 5em;
+    line-height: 75px;
+  }
+
+  .container header .name h2 {
+    font-size: 1.4em;
+  }
+
   .container .about-me .content {
     flex-direction: column;
   }
@@ -254,9 +273,5 @@ footer .copyright {
 
   .container .opportunities .card-experience {
     width: 70%;
-  }
-
-  .container .opportunities {
-    margin-top: 50px;
   }
 }
