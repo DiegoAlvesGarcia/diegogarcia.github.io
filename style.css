@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: grid;
   background-color: #fcfbfb;
@@ -23,18 +28,23 @@ ul {
   list-style: none;
 }
 
+.link {
+  text-decoration: underline;
+  text-decoration-color: #F7B64D;
+}
+
 .menu {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.container {
+.container-site {
   margin: 0 10%;
-  color: #3F3D56
+  color: #3F3D56;
 }
 
-.container header img {
+.container-site header img {
   box-shadow: -5px 5px #3F3D56;
   position: absolute;
   top: 0;
@@ -50,31 +60,31 @@ ul {
   height: auto;
 }
 
-.container header {
+.container-site header {
   min-height: 100vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
 
-.container header .text-hello {
+.container-site header .text-hello {
   width: 60%;
 }
 
-.container header .text-hello p {
+.container-site header .text-hello p {
   margin: 0;
 }
 
-.container header .text-hello .hello {
+.container-site header .text-hello .hello {
   font-size: 3.5em;
   color: #F7B64D;
 }
 
-.container header .text-hello .welcome {
+.container-site header .text-hello .welcome {
   font-size: 1.5em;
 }
 
-.container header .name h1 {
+.container-site header .name h1 {
   font-weight: 600;
   font-size: 6em;
   margin: 0;
@@ -82,55 +92,65 @@ ul {
   line-height: 85px;
 }
 
-.container header .name h2 {
+.container-site header .name h2 {
   text-align: initial;
   font-weight: 200;
   margin: 15px 0 0 0;
   font-size: 1.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #F7B64D;
+  padding-top: 0px;
+  animation: typing 3s ease-in-out 1s normal both;
 }
 
-.container header .follow-me {
+.container-site header .name .cursor {
+  overflow: visible;
+  margin-left: 3px;
+}
+
+.container-site header .follow-me {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
 }
 
-.container header .follow-me span {
+.container-site header .follow-me span {
   font-size: 1.2em;
 }
 
-.container header .follow-me svg {
+.container-site header .follow-me svg {
   fill: #3F3D56;
 }
 
-.container header .follow-me .social-media {
-  margin-left: 15px;
+.container-site header .follow-me .social-media {
+  margin: 0 8px;
 }
 
-.container .about-me {
+.container-site .about-me {
   border-top: 2px solid #F7B64D;
   border-bottom: 2px solid #F7B64D;
   border-radius: 15px;
 }
 
-.container .about-me h2 {
+.container-site .about-me h2 {
   margin: 0;
 }
 
-.container .about-me .content {
+.container-site .about-me .content {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   border-radius: 15px;
 }
 
-.container .about-me .content .image {
+.container-site .about-me .content .image {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.container .about-me .content .image img {
+.container-site .about-me .content .image img {
   max-width: 200px;
   max-height: 170px;
   width: auto;
@@ -139,18 +159,18 @@ ul {
   border-radius: 50%;
 }
 
-.container .about-me .content .text {
+.container-site .about-me .content .text {
   width: 70%;
   padding: 10px 30px;
   text-align: justify;
 }
 
-.container .opportunities {
+.container-site .opportunities {
   min-height: 100vh;
   margin-top: 30px;
 }
 
-.container .opportunities .card-experience {
+.container-site .opportunities .card-experience {
   border: 1px solid #f6f6f6;
   padding: 20px 30px;
   border-radius: 5px;
@@ -158,46 +178,100 @@ ul {
   width: 34%;
 }
 
-.container .opportunities .card-experience svg {
+.container-site .opportunities .card-experience svg {
   fill: #F7B64D;
   border-radius: 7px 0;
   padding: 5px;
   background-color: #fcfbfb;
 }
 
-.container .opportunities .card-experience:hover {
+.container-site .opportunities .card-experience:hover {
   background-color: #F7B64D;
   color: #fcfbfb;
+  text-decoration-color: #3F3D56;
 }
 
-.container .opportunities h3 {
+.container-site .opportunities .card-experience:hover .link {
+  text-decoration-color: #f6f6f6;
+}
+
+.container-site .opportunities h3 {
   text-align: start;
   margin: 0;
   color: inherit;
 }
 
-.container .opportunities h3 strong {
+.container-site .opportunities h3 strong {
   color: inherit;
 }
 
-.container .opportunities h4 {
+.container-site .opportunities h4 {
   font-weight: 500;
   text-align: start;
   margin: 0;
   color: inherit;
 }
 
-.container .opportunities p {
+.container-site .opportunities p {
   margin: 10px 0 0 0;
   color: inherit;
   font-weight: 300;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
-.container .opportunities .cards {
+.container-site .opportunities .cards {
   justify-content: space-evenly;
   display: flex;
   flex-flow: row wrap;
+}
+
+.container-site .opportunities .cards svg {
+  width: 35px;
+  height: 35px;
+}
+
+.container-site .recomendations .carousel {
+  color: #fcfbfb;
+  width: 100%;
+  background-color: #F7B64D;
+  padding: 30px 13% 70px;
+  min-height: 350px;
+  text-align: center;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+
+.container-site .recomendations .carousel .carousel-control {
+  opacity: 0.2;
+}
+
+.container-site .recomendations .carousel .left {
+  border-radius: 50px 0 0 50px;
+}
+
+.container-site .recomendations .carousel .right {
+  border-radius: 0 50px 50px 0;
+}
+
+.container-site .recomendations .carousel .descriptive {
+  min-height: 250px;
+}
+
+.container-site .recomendations .carousel .descriptive .item .person {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.container-site .recomendations .carousel .descriptive .item .quotation-marks {
+  font-size: 5em;
+  height: 40px;
+}
+
+.container-site .recomendations .carousel .descriptive .item .text {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 footer {
@@ -240,38 +314,60 @@ footer .copyright {
     font-size: 2em;
   }
 
-  .container header {
-    padding-bottom: 15px;
-    min-height: calc(100vh - 15px);
-  }
-
-  .container header .name h1 {
+  .container-site header .name h1 {
     font-size: 5em;
     line-height: 75px;
   }
 
-  .container header .name h2 {
+  .container-site header .name h2 {
     font-size: 1.4em;
   }
 
-  .container .about-me .content {
+  .container-site .about-me .content {
     flex-direction: column;
   }
 
-  .container .about-me .content .image {
+  .container-site .about-me .content .image {
     margin-top: 15px;
     flex-direction: row;
   }
 
-  .container .about-me .content .image img {
+  .container-site .about-me .content .image img {
     max-height: 140px;
   }
 
-  .container .about-me .content .text {
+  .container-site .about-me .content .text {
     width: auto;
   }
+}
 
-  .container .opportunities .card-experience {
+@media (max-width: 750px) {
+  .container-site .opportunities .card-experience {
     width: 70%;
+  }
+}
+
+@media (max-width: 420px) {
+  .container-site header {
+    padding-bottom: 15px;
+    min-height: calc(100vh - 15px);
+  }
+
+  .container-site header .follow-me span {
+    display: none;
+  }
+
+  .container-site .recomendations .carousel {
+    min-height: 400px
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 12.5em;
   }
 }
