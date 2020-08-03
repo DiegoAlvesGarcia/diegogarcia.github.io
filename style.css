@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  --grid: 0 10%;
 }
 
 body {
@@ -33,19 +34,82 @@ ul {
   text-decoration-color: #F7B64D;
 }
 
-.menu {
+.container-site .menu {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+}
+
+.container-site .menu a {
+  opacity: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: white;
+  background-color: #F7B64D;
+  text-decoration: inherit;
+  margin-right: 25px;
+  animation: fadeInRight 0.5s linear forwards;
+
+}
+.container-site .menu a:nth-child(1) {
+  animation-delay: 3.5s;
+}
+.container-site .menu a:nth-child(2) {
+  animation-delay: 3.75s;
+}
+.container-site .menu a:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 .container-site {
-  margin: 0 10%;
   color: #3F3D56;
 }
 
+.container-site .open {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.container-site .open .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top;
+  animation: open 1s ease-in-out forwards;
+}
+
+.container-site .open .layer:nth-child(1) {
+  background-color: #F7B64D;
+  z-index: 2;
+}
+
+.container-site .open .layer:nth-child(2) {
+  background-color: #fff;
+  animation-delay: 0.5s;
+  z-index: 1s;
+}
+
 .container-site header img {
-  box-shadow: -5px 5px #3F3D56;
+  opacity: 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -58,17 +122,69 @@ ul {
   max-height: 40%;
   width: auto;
   height: auto;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 4s;
 }
 
 .container-site header {
+  background-color: #3F3D56;
+  color: #fff;
+  padding: var(--grid);
   min-height: 100vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
 }
 
+.container-site header .element1 {
+  opacity: 0;
+  position: absolute;
+  right: 10%;
+  bottom: 30%;
+  width: 150px;
+  height: 150px;
+  border: 5px solid #F7B64D;
+  animation: rotate 40s linear infinite,
+    fadeIn 1s linear forwards;
+  animation-delay: 4s;
+}
+
+.container-site header .element2 {
+  opacity: 0;
+  position: absolute;
+  left: -3%;
+  top: -15%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #F7B64D;
+  animation: rotate 40s linear infinite,
+    fadeIn 1s linear forwards;
+  animation-delay: 4s;
+}
+
+@keyframes rotate {
+  from {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+
 .container-site header .text-hello {
-  width: 60%;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container-site header .text-hello p {
@@ -84,12 +200,22 @@ ul {
   font-size: 1.5em;
 }
 
+.container-site header .name h1,
+.container-site header .name h2 {
+  display: inline-block;
+  position: relative;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: revealTextReverse 1s ease-in-out forwards;
+}
+
 .container-site header .name h1 {
   font-weight: 600;
   font-size: 6em;
   margin: 0;
   letter-spacing: 2px;
   line-height: 85px;
+  animation-delay: 1s;
 }
 
 .container-site header .name h2 {
@@ -99,28 +225,57 @@ ul {
   font-size: 1.7em;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #F7B64D;
   padding-top: 0px;
-  animation: typing 3s ease-in-out 1s normal both;
+  animation-delay: 1.5s;
 }
 
-.container-site header .name .cursor {
-  overflow: visible;
-  margin-left: 3px;
+.container-site header .name h1:before,
+.container-site header .name h2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 112%;
+  transform-origin: right;
+  animation: revealText 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.container-site header .name h2:before {
+  animation-delay: 2.5s;
+}
+
+@keyframes revealText {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes revealTextReverse {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 .container-site header .follow-me {
   margin-bottom: 10px;
   display: flex;
-  justify-content: center;
-}
-
-.container-site header .follow-me span {
-  font-size: 1.2em;
+  justify-content: flex-end;
 }
 
 .container-site header .follow-me svg {
-  fill: #3F3D56;
+  fill: #fff;
+  opacity: 0;
+  animation: fadeInRight 0.5s linear forwards;
+  animation-delay: 3.5s;
 }
 
 .container-site header .follow-me .social-media {
@@ -128,6 +283,7 @@ ul {
 }
 
 .container-site .about-me {
+  margin: var(--grid);
   border-top: 2px solid #F7B64D;
   border-bottom: 2px solid #F7B64D;
   border-radius: 15px;
@@ -166,6 +322,7 @@ ul {
 }
 
 .container-site .opportunities {
+  padding: var(--grid);
   min-height: 100vh;
   margin-top: 30px;
 }
@@ -360,14 +517,17 @@ footer .copyright {
   .container-site .recomendations .carousel {
     min-height: 400px
   }
+
+  .container-site .menu {
+    display: none;
+  }
 }
 
-@keyframes typing {
+@keyframes open {
   from {
-    width: 0;
+    transform: scaleY(1);
   }
-
   to {
-    width: 12.5em;
+    transform: scaleY(0);
   }
 }
